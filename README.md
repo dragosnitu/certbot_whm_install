@@ -1,6 +1,4 @@
 # certbot_whm_install
-Automatically install letsencrypt certificates in cPanel DNSOnly
-
 cPanel DNSOnly does not provide a SSL certificate automatically. This script can be used as a post hook for letsencrypt to install the certificate/private key/bundle using whmapi1.
 
 To use letsencrypt we first need to configure *cpsrvd* to not listen to ports 80 and 443. Edit */var/cpanel/etc/cpanel.config* and set **disable_cphttpd=1**, then restart cpsrvd with **/scripts/restartsrv_cpsrvd**
