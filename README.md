@@ -3,7 +3,7 @@ cPanel DNSOnly does not provide a SSL certificate automatically. This script can
 
 To use letsencrypt we first need to configure *cpsrvd* to not listen to ports 80 and 443. Edit */var/cpanel/etc/cpanel.config* and set *disable_cphttpd=1*, then restart cpsrvd with **/scripts/restartsrv_cpsrvd**.
 
-Install certbot and copy **/scripts/restartsrv_cpsrvd.sh** to **/etc/letsencrypt/renewal-hooks/deploy**. Make sure the script has the execute bit set: **chmod +x /etc/letsencrypt/renewal-hooks/deploy/restartsrv_cpsrvd.sh**
+Install certbot and copy *restartsrv_cpsrvd.sh* to **/etc/letsencrypt/renewal-hooks/deploy**. Make sure the script has the execute bit set: **chmod +x /etc/letsencrypt/renewal-hooks/deploy/restartsrv_cpsrvd.sh**
 
 Get a certificate with **certbot certonly --standalone -d your.hostname.dom** and now you should have a valid certificate for your cPanel DNSOnly installation.
 
